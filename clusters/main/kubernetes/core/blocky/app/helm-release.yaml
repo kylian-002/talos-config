@@ -28,7 +28,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
     service:
       dns:
         type: LoadBalancer
@@ -83,7 +82,7 @@ spec:
             - https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt
             - https://raw.githubusercontent.com/AssoEchap/stalkerware-indicators/master/generated/hosts
             - https://urlhaus.abuse.ch/downloads/hostfile/
-                - https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser
+            - https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser
       #       # - https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
       #       # - https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts
       #       # - https://v.firebog.net/hosts/static/w3kbl.txt
@@ -147,18 +146,3 @@ spec:
         enabled: false
       datasource:
         enabled: false
-
-    cnpg:
-      main:
-        enabled: false
-        cluster:
-          storage:
-            storageClass: “ceph-nvme2”
-          walStorage:
-            storageClass: “ceph-nvme2”
-        backups:
-          enabled: true
-          credentials: s3
-        recovery:
-          method: object_store
-          credentials: s3
