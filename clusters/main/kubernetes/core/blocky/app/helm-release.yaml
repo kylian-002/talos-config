@@ -1,4 +1,5 @@
 ---
+
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -30,15 +31,9 @@ spec:
   values:
     service:
       dns:
+        externalTrafficPolicy: Local
         type: LoadBalancer
-        loadBalancerIP: 10.16.61.110
-        ports:
-          dns:
-            enabled: true
-            port: 53
-            protocol: udp
-            targetPort: 53
-
+        loadBalancerIP: ${BLOCKY_IP}
     # -- set blocking settings using Lists
     # Primarily designed for inclusion in the TrueNAS SCALE GUI
     blocking:
@@ -113,3 +108,21 @@ spec:
       #       # - https://urlhaus.abuse.ch/downloads/hostfile/
       #
       # -- Blocky clientGroupsBlock
+
+    k8sgateway:
+      # -- list of processed domains
+      domains:
+      - domain: "dutchlincoln.nl"
+        # -- Optional configuration option for DNS01 challenge that will redirect all acme
+        # challenge requests to external cloud domain (e.g. managed by cert-manager)
+        # See: https://cert-manager.io/docs/configuration/acme/dns01/
+        dnsChallenge:
+          enabled: false
+          domain: dns01.clouddns.com
+      - domain: "zephyrus-mc.com"
+        # -- Optional configuration option for DNS01 challenge that will redirect all acme
+        # challenge requests to external cloud domain (e.g. managed by cert-manager)
+        # See: https://cert-manager.io/docs/configuration/acme/dns01/
+        dnsChallenge:
+          enabled: false
+          domain: dns01.clouddns.com
