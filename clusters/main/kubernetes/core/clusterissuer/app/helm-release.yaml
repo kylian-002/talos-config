@@ -35,7 +35,15 @@ spec:
         enabled: true
         name: "selfsigned"
       ACME:
-        - name: dutchlincoln
+        - name: staging-dl
+          # Used for both logging in to the DNS provider AND ACME registration
+          email: "${EMAIL}"
+          server: 'https://acme-staging-v02.api.letsencrypt.org/directory'
+          # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns
+          type: "cloudflare"
+          # for cloudflare
+          cfapitoken: "${CLOUDFLARE_TOKEN1}"
+        - name: prod-dl
           # Used for both logging in to the DNS provider AND ACME registration
           email: "${EMAIL}"
           server: 'https://acme-v02.api.letsencrypt.org/directory'
@@ -43,6 +51,7 @@ spec:
           type: "cloudflare"
           # for cloudflare
           cfapitoken: "${CLOUDFLARE_TOKEN1}"
+
 
     clusterCertificates:
       # Namespaces in which the certificates must be available
@@ -52,7 +61,7 @@ spec:
       certificates:
         - name: dl-wildcard
           enabled: true
-          certificateIssuer: dutchlincoln
+          certificateIssuer: prod-dl
           hosts:
             - dutchlincoln.nl
             - '*.dutchlincoln.nl'

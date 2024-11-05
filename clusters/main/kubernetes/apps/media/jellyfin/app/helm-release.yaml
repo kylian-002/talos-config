@@ -41,7 +41,7 @@ spec:
                 namespace: traefik
           certManager:
             enabled: true
-            certificateIssuer: dutchlincoln
+            certificateIssuer: prod-dl
         hosts:
           - host: jellyfin2.${BASE_DOMAIN}
             paths:
