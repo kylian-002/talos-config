@@ -38,7 +38,7 @@ spec:
         - name: dutchlincoln
           # Used for both logging in to the DNS provider AND ACME registration
           email: "${EMAIL}"
-          server: 'https://acme-staging-v02.api.letsencrypt.org/directory'
+          server: 'https://acme-v02.api.letsencrypt.org/directory'
           # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns
           type: "cloudflare"
           # for cloudflare
