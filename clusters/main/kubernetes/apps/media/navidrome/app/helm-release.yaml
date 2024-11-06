@@ -48,12 +48,12 @@ spec:
               - path: /
                 pathType: Prefix
     persistence:
-      media:
+      music:
         enabled: true
         type: nfs
         path: /mnt/CHONK/media/jellyfin/media/music
         server: 10.16.61.10
-        mountPath: "/media"
+        mountPath: "/music"
         mountOptions:
           - nfsvers=4
           - tcp
