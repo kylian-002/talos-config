@@ -29,6 +29,10 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    qbitportforward:
+      enabled: false
+      QBT_USERNAME: "${QBT_USERNAME}"
+      QBT_PASSWORD: "${QBT_PASSWORD}"
     service:
       torrent:
         loadBalancerIP: ${TRAEFIK_IP}
