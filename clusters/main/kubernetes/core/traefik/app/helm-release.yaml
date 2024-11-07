@@ -87,7 +87,7 @@ spec:
             certificateIssuer: dutchlincoln
 
         hosts:
-          - host: traefik.${BASE_DOMAIN}
+          - host: traefik.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix

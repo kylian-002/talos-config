@@ -37,20 +37,20 @@ spec:
       ACME:
         - name: staging-dl
           # Used for both logging in to the DNS provider AND ACME registration
-          email: "${EMAIL}"
+          email: "${DOMAIN_0_EMAIL}"
           server: 'https://acme-staging-v02.api.letsencrypt.org/directory'
           # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns
           type: "cloudflare"
           # for cloudflare
-          cfapitoken: "${CLOUDFLARE_TOKEN1}"
+          cfapitoken: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
         - name: prod-dl
           # Used for both logging in to the DNS provider AND ACME registration
-          email: "${EMAIL}"
+          email: "${DOMAIN_0_EMAIL}"
           server: 'https://acme-v02.api.letsencrypt.org/directory'
           # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns
           type: "cloudflare"
           # for cloudflare
-          cfapitoken: "${CLOUDFLARE_TOKEN1}"
+          cfapitoken: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
 
 
     clusterCertificates:

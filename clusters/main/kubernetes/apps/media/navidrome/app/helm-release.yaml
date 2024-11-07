@@ -43,7 +43,7 @@ spec:
             enabled: true
             certificateIssuer: prod-dl
         hosts:
-          - host: music3.${BASE_DOMAIN}
+          - host: music3.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
