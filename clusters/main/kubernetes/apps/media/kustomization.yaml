@@ -6,3 +6,4 @@ resources:
   - navidrome/ks.yaml
   - qbittorrent/ks.yaml
   - sonarr/ks.yaml
+  - radarr/ks.yaml
