@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - jellyfin/ks.yaml
   - navidrome/ks.yaml
+  - qbittorrent/ks.yaml
