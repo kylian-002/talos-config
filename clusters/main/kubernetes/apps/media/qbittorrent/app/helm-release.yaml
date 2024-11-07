@@ -43,7 +43,7 @@ spec:
                 namespace: traefik
           certManager:
             enabled: true
-            certificateIssuer: dl-prod
+            certificateIssuer: prod-dl
         hosts:
           - host: torrent.${DOMAIN_0}
             paths:
