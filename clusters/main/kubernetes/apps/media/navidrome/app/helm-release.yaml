@@ -68,8 +68,7 @@ spec:
           - noatime
           - nodiratime
           - nolock
-      data:
-        enabled: true      
+      data:    
         volsync:
           - name: data
             type: restic
