@@ -29,6 +29,14 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    credentials:
+      s3:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-blocky"
+        accessKey: "${MINIO_ACCESSKEY}"
+        secretKey: "${MINIO_SECRETKEY}"
+        encrKey: "${MINIO_SECRETKEY}"
     service:
       dns:
         externalTrafficPolicy: Local
@@ -126,3 +134,14 @@ spec:
         dnsChallenge:
           enabled: false
           domain: dns01.clouddns.com
+
+
+    cnpg:
+      main:
+        mode: recovery
+        backups:
+          enabled: true
+          credentials: s3
+        recovery:
+          method: object_store
+          credentials: s3
