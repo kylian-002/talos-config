@@ -31,7 +31,7 @@ spec:
   values:
     credentials:
       s3:
-        type: s3-minio
+        type: s3
         url: "${S3URL}"
         bucket: "${S3PREFIX}-navidrome"
         accessKey: "${MINIO_ACCESSKEY}"
@@ -74,7 +74,7 @@ spec:
         volsync:
           - name: config
             type: restic
-            credentials: s3-minio
+            credentials: s3
             dest:
               enabled: true
             src:
