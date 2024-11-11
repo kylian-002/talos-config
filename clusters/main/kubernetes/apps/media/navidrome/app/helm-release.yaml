@@ -60,7 +60,6 @@ spec:
         type: nfs
         path: /mnt/CHONK/media/jellyfin/media/music
         server: 10.16.61.10
-        mountPath: "/music"
         mountOptions:
           - nfsvers=4
           - tcp
@@ -68,11 +67,11 @@ spec:
           - hard
           - noatime
           - nodiratime
-          - nolock     
-      config:
+          - nolock
+      data:
         enabled: true      
         volsync:
-          - name: config
+          - name: data
             type: restic
             credentials: s3
             dest:
