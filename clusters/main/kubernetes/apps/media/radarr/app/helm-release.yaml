@@ -36,7 +36,7 @@ spec:
         bucket: "${S3PREFIX}-radarr"
         accessKey: "${MINIO_ACCESSKEY}"
         secretKey: "${MINIO_SECRETKEY}"
-        encrKey: 
+        encrKey: "${MINIO_SECRETKEY}"
     workload:
       exportarr:
         enabled: false
