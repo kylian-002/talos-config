@@ -78,7 +78,7 @@ spec:
           - nodiratime
           - nolock
       config:
-        enabled: true
+        enabled: true      
         volsync:
           - name: config
             type: restic
