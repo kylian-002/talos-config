@@ -29,7 +29,14 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
+    credentials:
+      s3:
+        type: s3-minio
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-navidrome"
+        accessKey: "${MINIO_ACCESSKEY}"
+        secretKey: "${MINIO_SECRETKEY}"
+        encrKey: "${MINIO_SECRETKEY}"
     ingress:
       main:
         enabled: true
@@ -62,5 +69,13 @@ spec:
           - noatime
           - nodiratime
           - nolock     
-
+      config:
+        volsync:
+          - name: config
+            type: restic
+            credentials: s3-minio
+            dest:
+              enabled: true
+            src:
+              enabled: true
 
