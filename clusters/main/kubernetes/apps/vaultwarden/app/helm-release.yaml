@@ -33,7 +33,7 @@ spec:
       s3:
         type: s3
         url: "${S3URL}"
-        bucket: "${S3PREFIX}-navidrome"
+        bucket: "${S3PREFIX}-vaultwarden"
         accessKey: "${MINIO_ACCESSKEY}"
         secretKey: "${MINIO_SECRETKEY}"
         encrKey: "${MINIO_SECRETKEY}"
