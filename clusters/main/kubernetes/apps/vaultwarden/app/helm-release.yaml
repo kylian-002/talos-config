@@ -37,15 +37,6 @@ spec:
         accessKey: "${MINIO_ACCESSKEY}"
         secretKey: "${MINIO_SECRETKEY}"
         encrKey: "${MINIO_SECRETKEY}"
-
-    database:
-      # -- Database type,
-      # must be one of: 'sqlite', 'mysql' or 'postgresql'.
-      type: postgresql
-      # -- Enable DB Write-Ahead-Log for SQLite,
-      # disabled for other databases. https://github.com/dani-garcia/bitwarden_rs/wiki/Running-without-WAL-enabled
-      wal: false
-
     ingress:
       main:
         enabled: true
