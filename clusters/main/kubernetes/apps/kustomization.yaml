@@ -5,4 +5,4 @@ resources:
   - librespeed/ks.yaml
   - media
   - flaresolverr/ks.yaml
-#  - vaultwarden/ks.yaml
+  - vaultwarden/ks.yaml
