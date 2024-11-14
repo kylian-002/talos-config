@@ -134,11 +134,6 @@ spec:
         dnsChallenge:
           enabled: false
           domain: dns01.clouddns.com
-
-#    customDNS:
-#      mapping: 
-#        - DC01.${INTERNAL_DOMAIN}: ${DC01_IP}
-#        - DC02.${INTERNAL_DOMAIN}: ${DC02_IP}
     cnpg:
       main:
         mode: recovery
