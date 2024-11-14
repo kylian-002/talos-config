@@ -137,9 +137,9 @@ spec:
     # -- Set manual custom DNS resolution
     customDNS:
       mapping:
-        - domain: DC01.${INTERNAL_DOMAIN}
+        - domain: dc01.${INTERNAL_DOMAIN}
           dnsserver: ${DC01_IP}
-        - domain: DC02.${INTERNAL_DOMAIN}
+        - domain: dc02.${INTERNAL_DOMAIN}
           dnsserver: ${DC02_IP}
     cnpg:
       main:
