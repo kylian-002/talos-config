@@ -138,7 +138,7 @@ spec:
     customDNS:
       mapping:
         - domain: dc01.${INTERNAL_DOMAIN}
-          dnsserver: ${DC01_IP}
+          dnsserver: 10.16.10.10
         - domain: dc02.${INTERNAL_DOMAIN}
           dnsserver: ${DC02_IP}
     cnpg:
