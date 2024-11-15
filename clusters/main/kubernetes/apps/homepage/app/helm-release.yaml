@@ -65,3 +65,14 @@ spec:
               enabled: true
             src:
               enabled: true
+
+addons:
+  codeserver:
+    enabled: true
+    service:
+      type: "LoadBalancer"
+      LoadbalancerIP: "10.16.61.130"
+      ports:
+        codeserver:
+          port: 12321
+              
