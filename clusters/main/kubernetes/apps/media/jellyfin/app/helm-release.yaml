@@ -42,6 +42,8 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: prod-dl
+          homepage:
+            enabled: true
         hosts:
           - host: jellyfin2.${BASE_DOMAIN}
             paths:
