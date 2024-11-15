@@ -7,3 +7,4 @@ resources:
   - flaresolverr/ks.yaml
   - vaultwarden/ks.yaml
   - papermerge/ks.yaml
+  - homepage/ks.yaml
