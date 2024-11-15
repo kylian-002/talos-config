@@ -135,12 +135,12 @@ spec:
           enabled: false
           domain: dns01.clouddns.com
     # -- Set manual custom DNS resolution
-        customDNS:
-          mapping:
-            - domain: dc01.internal.dutchlincoln.nl
-              dnsserver: 10.16.10.10
-            - domain: dc02.${INTERNAL_DOMAIN}
-              dnsserver: ${DC02_IP}
+    customDNS:
+      mapping:
+        - domain: dc01.internal.dutchlincoln.nl
+          dnsserver: 10.16.10.10
+        - domain: dc02.${INTERNAL_DOMAIN}
+          dnsserver: ${DC02_IP}
     cnpg:
       main:
         mode: recovery
