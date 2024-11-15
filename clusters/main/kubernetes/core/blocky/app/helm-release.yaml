@@ -139,8 +139,8 @@ spec:
       mapping:
         - domain: dc01.internal.dutchlincoln.nl
           dnsserver: 10.16.10.10
-        - domain: dc02.${INTERNAL_DOMAIN}
-          dnsserver: ${DC02_IP}
+        - domain: dc02.internal.dutchlincoln.nl
+          dnsserver: 10.16.10.20
     cnpg:
       main:
         mode: recovery
