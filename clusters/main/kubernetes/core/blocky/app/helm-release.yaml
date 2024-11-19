@@ -141,12 +141,12 @@ spec:
           dnsserver: 10.16.10.10
         - domain: dc02.internal.dutchlincoln.nl
           dnsserver: 10.16.10.20
-#    cnpg:
-#      main:
-#        mode: recovery
-#        backups:
-#          enabled: true
-#          credentials: s3
-#        recovery:
-#          method: object_store
-#          credentials: s3
+    cnpg:
+      main:
+        mode: recovery
+        backups:
+          enabled: false
+          credentials: s3
+        recovery:
+          method: object_store
+          credentials: s3
