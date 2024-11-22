@@ -137,9 +137,9 @@ spec:
     # -- Set manual custom DNS resolution
     customDNS:
       mapping:
-        - domain: dc01.internal.dutchlincoln.nl
+        - domain: dc01.internal.${BASE_DOMAIN}
           dnsserver: 10.16.10.10
-        - domain: dc02.internal.dutchlincoln.nl
+        - domain: dc02.internal.${BASE_DOMAIN}
           dnsserver: 10.16.10.20
     cnpg:
       main:
