@@ -8,3 +8,4 @@ resources:
   - vaultwarden/ks.yaml
   - papermerge/ks.yaml
   - homepage/ks.yaml
+  - nextcloud/ks.yaml

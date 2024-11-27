@@ -1,0 +1,104 @@
+---
+
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: nextcloud
+      version: 32.2.11
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: Europe/Amsterdam
+    credentials:
+      s3:
+        type: cloudflare
+        url: "${CF_URL}"
+        bucket: "backups-nextcloud"
+        accessKey: "${CF_ACCESSKEY}"
+        secretKey: "${CF_SECRETKEY}"
+        encrKey: "${CF_SECRETKEY}"
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: local
+                namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: prod-dl
+        hosts:
+          - host: cloud2.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+
+    persistence:
+      html:
+        volsync:
+          - name: html-config
+            type: restic
+            credentials: cloudflare
+            dest:
+              enabled: true
+            src:
+              enabled: true
+      config:
+        volsync:
+          - name: config
+            type: restic
+            credentials: cloudflare
+            dest:
+              enabled: true
+            src:
+              enabled: true
+
+      data:
+        enabled: true
+        type: nfs
+        path: /mnt/TANK/cloud-dutchlincoln
+        server: 10.16.61.10
+        mountOptions:
+          - nfsvers=4
+          - tcp
+          - intr
+          - hard
+          - noatime
+          - nodiratime
+          - nolock
+
+
+    cnpg:
+      main:
+        pgVersion: 15
+        mode: recovery
+        backups:
+          revision: 2
+          enabled: false
+          credentials: cloudflare
+        recovery:
+          method: object_store
+          credentials: cloudflare
