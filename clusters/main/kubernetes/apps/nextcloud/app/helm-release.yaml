@@ -31,8 +31,8 @@ spec:
   values:
     TZ: Europe/Amsterdam
     credentials:
-      s3:
-        type: cloudflare
+      cloudflare:
+        type: s3
         url: "${CF_URL}"
         bucket: "backups-nextcloud"
         accessKey: "${CF_ACCESSKEY}"
