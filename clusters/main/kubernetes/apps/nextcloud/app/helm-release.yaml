@@ -94,10 +94,9 @@ spec:
         pgVersion: 15
         mode: recovery
         backups:
-          revision: "2"
+          revision: "1"
           enabled: false
           credentials: cloudflare
         recovery:
-          revision: "1"
           method: object_store
           credentials: cloudflare
