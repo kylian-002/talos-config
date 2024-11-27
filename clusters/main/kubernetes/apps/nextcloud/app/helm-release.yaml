@@ -89,14 +89,12 @@ spec:
           - noatime
           - nodiratime
           - nolock
-
-
     cnpg:
       main:
         pgVersion: 15
         mode: recovery
         backups:
-          revision: 2
+          revision: "2"
           enabled: false
           credentials: cloudflare
         recovery:
