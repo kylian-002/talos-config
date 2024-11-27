@@ -34,7 +34,7 @@ spec:
       cloudflare:
         type: s3
         url: "${CF_URL}"
-        bucket: "backups-nextcloud"
+        bucket: "backups"
         accessKey: "${CF_ACCESSKEY}"
         secretKey: "${CF_SECRETKEY}"
         encrKey: "${CF_SECRETKEY}"
