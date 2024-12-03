@@ -45,7 +45,7 @@ spec:
           homepage:
             enabled: true
         hosts:
-          - host: jellyfin.${BASE_DOMAIN}
+          - host: jellyfin.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
