@@ -29,6 +29,19 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    nextcloud:
+      # Initial Credentials
+      credentials:
+        initialAdminUser: "${NEXTCLOUD_USER}"
+        initialAdminPassword: "${NEXTCLOUD_PASSWORD}"
+      # General settings
+      general:
+        # Custom Nextcloud Scripts
+        run_optimize: true
+        default_phone_region: NL
+        # IP used for exposing nextcloud,
+        # often the loadbalancer IP
+        accessIP: ${TRAEFIK_IP}
     TZ: Europe/Amsterdam
     credentials:
       cloudflare:
