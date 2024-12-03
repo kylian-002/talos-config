@@ -135,10 +135,11 @@ spec:
           enabled: false
           domain: dns01.clouddns.com
     # -- Set manual custom DNS resolution
-#    customDNS:
-#      mapping:
-#        - domain: dc01.internal.${BASE_DOMAIN}
-#          dnsserver: 10.16.10.10
+    customDNS:
+      mapping:
+        - domain: node1.zephyrus-mc.com
+          dnsserver: 10.16.60.10
+
 #        - domain: dc02.internal.${BASE_DOMAIN}
 #          dnsserver: 10.16.10.20
     cnpg:
