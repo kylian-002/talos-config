@@ -71,7 +71,7 @@ spec:
             enabled: true
             certificateIssuer: prod-dl
         hosts:
-          - host: cloud2.${DOMAIN_0}
+          - host: cloud.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
