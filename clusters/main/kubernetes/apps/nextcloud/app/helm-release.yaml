@@ -51,6 +51,13 @@ spec:
         accessKey: "${CF_ACCESSKEY}"
         secretKey: "${CF_SECRETKEY}"
         encrKey: "${CF_SECRETKEY}"
+      minio:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-nextcloud"
+        accessKey: "${MINIO_ACCESSKEY}"
+        secretKey: "${MINIO_SECRETKEY}"
+        encrKey: "${MINIO_SECRETKEY}"
     ingress:
       main:
         enabled: true
@@ -74,20 +81,20 @@ spec:
         volsync:
           - name: html-config
             type: restic
-            credentials: cloudflare
+            credentials: minio
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
       config:
         volsync:
           - name: config
             type: restic
-            credentials: cloudflare
+            credentials: minio
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
 
       data:
         enabled: true
@@ -101,8 +108,8 @@ spec:
         mode: recovery
         backups:
           revision: "1"
-          enabled: false
-          credentials: cloudflare
+          enabled: true
+          credentials: minio
         recovery:
           method: object_store
           credentials: cloudflare
