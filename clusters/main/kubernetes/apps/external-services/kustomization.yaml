@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - homeassistant/ks.yaml
   - panel-zephyrus-mc/ks.yaml
-  - namespace.yaml

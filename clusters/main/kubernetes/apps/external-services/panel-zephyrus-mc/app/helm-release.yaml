@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: panel-zephyrus-mc
-  namespace: external-services
+  namespace: external-service
 spec:
   interval: 15m
   chart:
@@ -27,12 +27,23 @@ spec:
   uninstall:
     keepHistory: false
 values:
-
+    service:
+      main:
+        enabled: true
+        externalIP: 10.16.60.10
+        ports:
+          main:
+            enabled: true
+            port: 80
+            protocol: http
+        type: ExternalIP
     ingress:
       main:
         enabled: true
         integrations:
           traefik:
+            entrypoints:
+              - websecure          
             enabled: true
             middlewares:
               - name: local
@@ -44,16 +55,4 @@ values:
           - host: panel.${DOMAIN_1}
             paths:
               - path: /
-                pathType: Prefix        
-
-    release_name: panel-zephyrus-mc
-    service:
-      main:
-        enabled: true
-        externalIP: 10.16.60.10
-        ports:
-          main:
-            enabled: true
-            port: 80
-            protocol: http
-        type: ExternalIP
+                pathType: Prefix
