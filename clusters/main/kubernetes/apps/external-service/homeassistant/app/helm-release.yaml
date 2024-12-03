@@ -42,7 +42,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: ha.${DOMAIN_1}
+          - host: ha.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
