@@ -90,21 +90,11 @@ spec:
               enabled: false
 
       data:
-        autoPermissions:
-          enabled: false
         enabled: true
         path: /mnt/TANK/cloud-dutchlincoln
-        readOnly: false
         server: 10.16.61.10
         type: nfs
-        mountOptions:
-          - nfsvers=4
-          - tcp
-          - intr
-          - hard
-          - noatime
-          - nodiratime
-          - nolock
+
     cnpg:
       main:
         pgVersion: 15
