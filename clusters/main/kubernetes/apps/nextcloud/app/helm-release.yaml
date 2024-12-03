@@ -112,4 +112,4 @@ spec:
           credentials: minio
         recovery:
           method: object_store
-          credentials: cloudflare
+          credentials: minio
