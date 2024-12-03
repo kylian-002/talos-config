@@ -90,10 +90,13 @@ spec:
               enabled: false
 
       data:
+        autoPermissions:
+          enabled: false
         enabled: true
-        type: nfs
         path: /mnt/TANK/cloud-dutchlincoln
+        readOnly: false
         server: 10.16.61.10
+        type: nfs
         mountOptions:
           - nfsvers=4
           - tcp
