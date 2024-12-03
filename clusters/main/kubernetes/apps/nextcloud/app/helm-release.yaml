@@ -29,7 +29,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    hostAliases: []
     TZ: Europe/Amsterdam
     credentials:
       cloudflare:
