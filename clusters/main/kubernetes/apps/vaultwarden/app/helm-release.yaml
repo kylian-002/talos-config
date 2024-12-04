@@ -43,9 +43,9 @@ spec:
         integrations:
           traefik:
             enabled: true
-            middlewares:
-              - name: local
-                namespace: traefik
+            # middlewares:
+            #   - name: local
+            #     namespace: traefik
           certManager:
             enabled: true
             certificateIssuer: prod-dl
@@ -59,6 +59,20 @@ spec:
       # see: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-registration-of-new-users
       allowSignups: false
       admin:
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: private-range
+                namespace: traefik     
+          certManager:
+            enabled: true
+            certificateIssuer: prod-dl
+        hosts:
+          - host: vault.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix                 
         # Enable admin portal.
         enabled: true
         # Disabling the admin token will make the admin portal accessible to anyone, use carefully: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-admin-token
