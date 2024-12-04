@@ -10,3 +10,4 @@ resources:
   - homepage/ks.yaml
   - nextcloud/ks.yaml
   - external-service
+  - syslog-ng/ks.yaml
