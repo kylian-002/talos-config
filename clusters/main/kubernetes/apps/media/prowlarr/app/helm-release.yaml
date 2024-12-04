@@ -44,7 +44,7 @@ spec:
           traefik:
             enabled: true
             middlewares:
-              - name: local
+              - name: private-range
                 namespace: traefik
           certManager:
             enabled: true
