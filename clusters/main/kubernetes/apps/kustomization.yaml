@@ -11,3 +11,4 @@ resources:
   - nextcloud/ks.yaml
   - external-service
   - syslog-ng/ks.yaml
+  - odoo/ks.yaml
