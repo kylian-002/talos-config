@@ -64,7 +64,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true              
+              enabled: true
       addons:
         enabled: true
         volsync:
@@ -74,7 +74,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true              
+              enabled: true
       odoo-config:
         enabled: true
         volsync:
@@ -84,7 +84,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true              
+              enabled: true
     # Enabled postgres
     cnpg:
       main:
@@ -96,7 +96,21 @@ spec:
         recovery:
           # revision: ""
           method: object_store
-          credentials: minio        
+          credentials: minio
     portal:
       open:
         enabled: true
+
+    addons:
+      codeserver:
+        # -- Enable running a code-server container in the pod
+        enabled: true
+
+        service:
+          # -- Enable a service for the code-server add-on.
+          type: "LoadBalancer"
+          loadBalancerIP: "10.16.61.150"
+          # Specify the default port information
+          ports:
+            codeserver:
+              port: 12321
