@@ -53,6 +53,7 @@ spec:
             group: "Arr"          
             enabled: true
             name: "sonarr"
+            url: http://jellyfin.media.svc.cluster.local:8989
             custom:
               key: ${SONARR_API}
         hosts:
