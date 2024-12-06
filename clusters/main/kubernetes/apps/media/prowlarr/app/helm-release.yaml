@@ -49,6 +49,10 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: prod-dl
+          homepage:
+            group: "Arr"          
+            enabled: true
+            name: "prowlarr"              
         hosts:
           - host: prowlarr.${DOMAIN_0}
             paths:

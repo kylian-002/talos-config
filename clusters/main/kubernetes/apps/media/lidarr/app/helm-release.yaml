@@ -57,6 +57,10 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: prod-dl
+          homepage:
+            group: "Arr"          
+            enabled: true
+            name: "lidarr"            
         hosts:
           - host: lidarr.${DOMAIN_0}
             paths:
