@@ -50,7 +50,7 @@ spec:
             enabled: true
             certificateIssuer: prod-dl
           homepage:
-            group: "media"          
+            group: "Media"          
             enabled: true
             name: "navidrome"
         hosts:
