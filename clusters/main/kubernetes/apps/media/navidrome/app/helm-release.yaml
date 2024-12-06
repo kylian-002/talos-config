@@ -49,6 +49,9 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: prod-dl
+          homepage:
+            enabled: true
+            name: "navidrome"
         hosts:
           - host: music.${DOMAIN_0}
             paths:
