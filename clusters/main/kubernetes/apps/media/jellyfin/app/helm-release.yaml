@@ -43,6 +43,7 @@ spec:
             enabled: true
             certificateIssuer: prod-dl
           homepage:
+            group: "media"
             enabled: true
             name: "jellyfin"
             widget:
