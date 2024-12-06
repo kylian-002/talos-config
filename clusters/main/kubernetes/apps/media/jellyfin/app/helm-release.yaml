@@ -46,7 +46,6 @@ spec:
             enabled: true
             name: "jellyfin"
             widget:
-              url: http://jellyfin.media.svc.cluster.local:8096
               custom:   
                 key: "${jellyfin_API}"            
         hosts:
