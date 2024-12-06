@@ -53,6 +53,8 @@ spec:
             group: "Arr"          
             enabled: true
             name: "sonarr"
+            custom:
+              key: ${SONARR_API}
         hosts:
           - host: sonarr.${DOMAIN_0}
             paths:
