@@ -48,7 +48,7 @@ spec:
             name: "jellyfin"
             widget:
               custom:   
-                key: "${jellyfin_API}"            
+                key: "${JELLYFIN_API}"            
         hosts:
           - host: jellyfin.${DOMAIN_0}
             paths:
