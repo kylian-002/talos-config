@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - homeassistant/ks.yaml
   - zephyrusmc-panel/ks.yaml
-  - urbackup/ks.yaml
+#  - urbackup/ks.yaml

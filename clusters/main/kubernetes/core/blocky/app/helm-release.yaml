@@ -139,6 +139,9 @@ spec:
       mapping:
         - domain: node1.zephyrus-mc.com
           dnsserver: 10.16.60.10
+        - domain: backups.dutchlincoln.nl
+          dnsserver: 10.16.61.10
+
 
 #        - domain: dc02.internal.${BASE_DOMAIN}
 #          dnsserver: 10.16.10.20
