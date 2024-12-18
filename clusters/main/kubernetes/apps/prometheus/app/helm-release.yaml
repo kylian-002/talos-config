@@ -44,13 +44,13 @@ spec:
           traefik:
             enabled: true
             middlewares:
-              - name: local
+              - name: private-range
                 namespace: traefik
           certManager:
             enabled: true
-            certificateIssuer: prod-dl
+            certificateIssuer: prod-dl            
         hosts:
           - host: prometheus.${DOMAIN_0}
             paths:
               - path: /
-                pathType: Prefix               
+                pathType: Prefix           
