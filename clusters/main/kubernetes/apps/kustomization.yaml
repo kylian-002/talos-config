@@ -12,3 +12,4 @@ resources:
   - external-service
   - syslog-ng/ks.yaml
   - odoo/ks.yaml
+  - grafana/ks.yaml
