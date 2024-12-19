@@ -29,10 +29,10 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    service:
-      main:
-        type: LoadBalancer
-        loadBalancerIP: 10.16.61.160
+    # service:
+    #   main:
+    #     type: LoadBalancer
+    #     loadBalancerIP: 10.16.61.160
     workload:
       main:
         podSpec:
