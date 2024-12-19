@@ -63,8 +63,8 @@ spec:
       #       protocol: udp
       #       targetPort: 514
       #       port: 5514
-      # syslog-tls:
-      #   enabled: true
+      syslog-tls:
+        enabled: false
       #   type: LoadBalancer
       #   loadBalancerIP: 10.16.61.160        
       #   ports:
