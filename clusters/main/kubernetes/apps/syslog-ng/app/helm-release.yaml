@@ -44,4 +44,24 @@ spec:
           - host: syslog.${DOMAIN_0}
             paths:
               - path: /
-                pathType: Prefix  
+                pathType: Prefix
+    service:
+      syslog-udp:
+        enabled: true
+        type: LoadBalancer
+        loadBalancerIP: 10.16.61.160
+        ports:
+          syslog-udp:
+            enabled: true
+            protocol: udp
+            targetPort: 514
+            port: 5514
+      syslog-tls:
+        enabled: true
+        type: LoadBalancer
+        loadBalancerIP: 10.16.61.160        
+        ports:
+          syslog-tls:
+            enabled: true
+            targetPort: 6514
+            port: 6514     
