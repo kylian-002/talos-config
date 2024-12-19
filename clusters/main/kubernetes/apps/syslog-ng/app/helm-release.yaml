@@ -28,40 +28,47 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    ingress:
-      main:
-        enabled: true
-        integrations:
-          traefik:
-            enabled: true
-            middlewares:
-              - name: private-range
-                namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: prod-dl
-        hosts:
-          - host: syslog.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
+    # ingress:
+    #   main:
+    #     enabled: true
+    #     integrations:
+    #       traefik:
+    #         enabled: true
+    #         middlewares:
+    #           - name: private-range
+    #             namespace: traefik
+    #       certManager:
+    #         enabled: true
+    #         certificateIssuer: prod-dl
+    #     hosts:
+    #       - host: syslog.${DOMAIN_0}
+    #         paths:
+    #           - path: /
+    #             pathType: Prefix
     service:
-      syslog-udp:
-        enabled: true
+      main:
         type: LoadBalancer
         loadBalancerIP: 10.16.61.160
-        ports:
-          syslog-udp:
-            enabled: true
-            protocol: udp
-            targetPort: 514
-            port: 5514
-      syslog-tls:
-        enabled: true
-        type: LoadBalancer
-        loadBalancerIP: 10.16.61.160        
-        ports:
-          syslog-tls:
-            enabled: true
-            targetPort: 6514
-            port: 6514     
+      #   ports:
+      #     main:
+      #       targetPort: 601
+      #       port: 6601    
+      # syslog-udp:
+      #   enabled: true
+      #   type: LoadBalancer
+      #   loadBalancerIP: 10.16.61.160
+      #   ports:
+      #     syslog-udp:
+      #       enabled: true
+      #       protocol: udp
+      #       targetPort: 514
+      #       port: 5514
+      # syslog-tls:
+      #   enabled: true
+      #   type: LoadBalancer
+      #   loadBalancerIP: 10.16.61.160        
+      #   ports:
+      #     syslog-tls:
+      #       enabled: true
+      #       targetPort: 6514
+      #       port: 6514     
