@@ -40,6 +40,7 @@ spec:
             main:
               env:
                 UP_UNIFI_DEFAULT_URL: "${UNIFI_URL}"
-                UP_UNIFI_DEFAULT_USER: "${UNIFI_PASS}"
-                UP_UNIFI_DEFAULT_PASS: "${UNIFI_USER}"
-                UP_PROMETHEUS_DISABLE: false        
+                UP_UNIFI_DEFAULT_USER: "${UNIFI_USER}"
+                UP_UNIFI_DEFAULT_PASS: "${UNIFI_PASS}" 
+                UP_PROMETHEUS_DISABLE: false
+               
