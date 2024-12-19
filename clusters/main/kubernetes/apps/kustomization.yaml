@@ -13,3 +13,4 @@ resources:
   - odoo/ks.yaml
   - grafana/ks.yaml
   - prometheus/ks.yaml
+  - unpoller/ks.yaml
