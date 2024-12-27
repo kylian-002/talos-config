@@ -1,0 +1,148 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: immich
+  namespace: immich
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: immich
+      version: 17.26.0
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: Europe/Amsterdam
+    credentials:
+      minio:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-immich"
+        accessKey: "${MINIO_ACCESSKEY}"
+        secretKey: "${MINIO_SECRETKEY}"
+        encrKey: "${MINIO_SECRETKEY}"
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+            # middlewares:
+            #   - name: private-range
+            #     namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: prod-dl
+        hosts:
+          - host: immich.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+
+
+    persistence:
+      library:
+        enabled: true
+        path: /mnt/TANK/immich/library
+        server: 10.16.61.10
+        type: nfs
+        mountOptions:
+          - nfsvers=4
+          - tcp
+          - intr
+          - hard
+          - noatime
+          - nodiratime
+          - nolock
+      uploads:
+        enabled: true
+        path: /mnt/TANK/immich/uploads
+        server: 10.16.61.10
+        type: nfs
+        mountOptions:
+          - nfsvers=4
+          - tcp
+          - intr
+          - hard
+          - noatime
+          - nodiratime
+          - nolock
+      backups:
+        enabled: true
+        path: /mnt/TANK/immich/backups
+        server: 10.16.61.10
+        type: nfs
+        mountOptions:
+          - nfsvers=4
+          - tcp
+          - intr
+          - hard
+          - noatime
+          - nodiratime
+          - nolock
+      thumbs:
+        enabled: true
+        path: /mnt/TANK/immich/thumbs
+        server: 10.16.61.10
+        type: nfs
+        mountOptions:
+          - nfsvers=4
+          - tcp
+          - intr
+          - hard
+          - noatime
+          - nodiratime
+          - nolock
+      profile:
+        enabled: true
+        path: /mnt/TANK/immich/profile
+        server: 10.16.61.10
+        type: nfs
+        mountOptions:
+          - nfsvers=4
+          - tcp
+          - intr
+          - hard
+          - noatime
+          - nodiratime
+          - nolock
+      video:
+        enabled: true
+        path: /mnt/TANK/immich/video
+        server: 10.16.61.10
+        type: nfs
+        mountOptions:
+          - nfsvers=4
+          - tcp
+          - intr
+          - hard
+          - noatime
+          - nodiratime
+          - nolock
+    cnpg:
+      main:
+        # mode: recovery
+        backups:
+          # revision: ""
+          enabled: true
+          credentials: minio
+        recovery:
+          # revision: ""        
+          method: object_store
+          credentials: minio          
