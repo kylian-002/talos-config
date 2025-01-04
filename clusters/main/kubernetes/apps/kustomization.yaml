@@ -16,3 +16,4 @@ resources:
   - unpoller/ks.yaml
   - cloudflareddns/ks.yaml
   - immich/ks.yaml
+  - grocy/ks.yaml
