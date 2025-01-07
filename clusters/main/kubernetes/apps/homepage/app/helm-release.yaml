@@ -65,16 +65,43 @@ spec:
               enabled: true
             src:
               enabled: true
-    addons:
-      codeserver:
-        # -- Enable running a code-server container in the pod
-        enabled: true
 
-        service:
-          # -- Enable a service for the code-server add-on.
-          type: "LoadBalancer"
-          loadBalancerIP: "10.16.61.130"
-          # Specify the default port information
-          ports:
-            codeserver:
-              port: 12321              
+      addons:
+        codeserver:
+          enabled: true
+          ingress:
+            enabled: true
+            hosts:
+            - host: homepage.code.${DOMAIN_0}
+              paths:
+              - path: /
+                pathType: Prefix
+            integrations:
+              certManager:
+                certificateIssuer: prod-dl
+                enabled: true
+              traefik:
+                enabled: true
+                entrypoints:
+                - websecure
+                middlewares:
+                - name: private-range
+                  namespace: 'traefik'
+
+
+
+
+
+    # addons:
+    #   codeserver:
+    #     # -- Enable running a code-server container in the pod
+    #     enabled: true
+
+    #     service:
+    #       # -- Enable a service for the code-server add-on.
+    #       type: "LoadBalancer"
+    #       loadBalancerIP: "10.16.61.130"
+    #       # Specify the default port information
+    #       ports:
+    #         codeserver:
+    #           port: 12321              
