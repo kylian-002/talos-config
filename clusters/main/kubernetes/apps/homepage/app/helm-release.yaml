@@ -66,25 +66,25 @@ spec:
             src:
               enabled: true
 
-      addons:
-        codeserver:
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
           enabled: true
-          ingress:
-            enabled: true
-            hosts:
-            - host: homepage.code.${DOMAIN_0}
-              paths:
-              - path: /
-                pathType: Prefix
-            integrations:
-              certManager:
-                certificateIssuer: prod-dl
-                enabled: true
-              traefik:
-                enabled: true
-                middlewares:
-                - name: private-range
-                  namespace: 'traefik'
+          hosts:
+          - host: homepage.code.${DOMAIN_0}
+            paths:
+            - path: /
+              pathType: Prefix
+          integrations:
+            certManager:
+              certificateIssuer: prod-dl
+              enabled: true
+            traefik:
+              enabled: true
+              middlewares:
+              - name: private-range
+                namespace: 'traefik'
 
 
 
