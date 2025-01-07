@@ -82,8 +82,6 @@ spec:
                 enabled: true
               traefik:
                 enabled: true
-                entrypoints:
-                - websecure
                 middlewares:
                 - name: private-range
                   namespace: 'traefik'
