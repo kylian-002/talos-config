@@ -44,10 +44,10 @@ spec:
         # IP used for exposing nextcloud,
         # often the loadbalancer IP
         accessIP: ${TRAEFIK_IP}
-    TZ: Europe/Amsterdam
-    php:
-      memory_limit: 5G
-      upload_limit: 20G    
+      php:
+        memory_limit: 5G
+        upload_limit: 20G          
+    TZ: Europe/Amsterdam  
     credentials:
       cloudflare:
         type: s3
