@@ -45,6 +45,9 @@ spec:
         # often the loadbalancer IP
         accessIP: ${TRAEFIK_IP}
     TZ: Europe/Amsterdam
+    php:
+      memory_limit: 5G
+      upload_limit: 20G    
     credentials:
       cloudflare:
         type: s3
