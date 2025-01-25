@@ -37,6 +37,14 @@ spec:
         accessKey: "${MINIO_ACCESSKEY}"
         secretKey: "${MINIO_SECRETKEY}"
         encrKey: "${MINIO_SECRETKEY}"
+    service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: 10.16.61.143
+        ports:
+          main:
+            port: 80
+
     ingress:
       main:
         enabled: true
