@@ -43,7 +43,7 @@ spec:
 
     metrics:
       main:
-        enabled: true
+        enabled: false
 
     ingress:
       main:
