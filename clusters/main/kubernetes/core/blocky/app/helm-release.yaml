@@ -146,12 +146,18 @@ spec:
 
 #        - domain: dc02.internal.${BASE_DOMAIN}
 #          dnsserver: 10.16.10.20
+#     cnpg:
+#       main:
+# #        mode: recovery
+#         backups:
+#           enabled: false
+#           credentials: s3
+#         recovery:
+#           method: object_store
+#           credentials: s3
     cnpg:
       main:
-#        mode: recovery
-        backups:
-          enabled: false
-          credentials: s3
-        recovery:
-          method: object_store
-          credentials: s3
+        enabled: false
+    metrics:
+      main:
+        enabled: false
