@@ -17,3 +17,4 @@ resources:
   - cloudflareddns/ks.yaml
   - immich/ks.yaml
   - grocy/ks.yaml
+  - audacity/ks.yaml
