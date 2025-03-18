@@ -29,14 +29,14 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    # credentials:
-    #   minio:
-    #     type: s3
-    #     url: "${S3URL}"
-    #     bucket: "${S3PREFIX}-audacity"
-    #     accessKey: "${MINIO_ACCESSKEY}"
-    #     secretKey: "${MINIO_SECRETKEY}"
-    #     encrKey: "${MINIO_SECRETKEY}"
+    credentials:
+      minio:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-audacity"
+        accessKey: "${MINIO_ACCESSKEY}"
+        secretKey: "${MINIO_SECRETKEY}"
+        encrKey: "${MINIO_SECRETKEY}"
     ingress:
       main:
         enabled: true
@@ -77,4 +77,14 @@ spec:
     #       # Specify the default port information
     #       ports:
     #         codeserver:
-    #           port: 12321            
+    #           port: 12321
+      config:
+        enabled: true      
+        volsync:
+          - name: config
+            type: restic
+            credentials: s3
+            dest:
+              enabled: true
+            src:
+              enabled: true                
