@@ -82,6 +82,7 @@ spec:
           - nodiratime
           - nolock
       config:
+        size: 15Gi
         enabled: true      
         volsync:
           - name: config
