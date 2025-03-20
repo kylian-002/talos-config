@@ -155,5 +155,5 @@ spec:
           singleNode: true
           storage:
             size: "120Gi"        
-          # walStorage:
-          #   size: "120Gi"
+          walStorage:
+            size: "120Gi"
