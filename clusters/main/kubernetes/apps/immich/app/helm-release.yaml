@@ -152,5 +152,6 @@ spec:
           credentials: minio          
 
         cluster:
+          singleNode: true        
           walStorage:
             size: "120Gi"
