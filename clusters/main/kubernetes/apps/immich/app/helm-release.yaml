@@ -152,6 +152,8 @@ spec:
           credentials: minio          
 
         cluster:
-          singleNode: true        
-          walStorage:
-            size: "120Gi"
+          singleNode: true
+          storage:
+            size: "120Gi"        
+          # walStorage:
+          #   size: "120Gi"
