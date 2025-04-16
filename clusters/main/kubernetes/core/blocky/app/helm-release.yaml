@@ -142,6 +142,11 @@ spec:
           dnsserver: 10.16.60.10
         - domain: backups.dutchlincoln.nl
           dnsserver: 10.16.61.10
+    defaultUpstreams:
+      # Cloudflare
+      - 1.1.1.1
+      - 1.0.0.1
+
 
 
 #        - domain: dc02.internal.${BASE_DOMAIN}
