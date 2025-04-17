@@ -6,7 +6,7 @@ metadata:
   annotations:
       cert-manager.io/cluster-issuer: prod-dl
       cert-manager.io/private-key-rotation-policy: Always
-      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"    
       # traefik.frontend.passHostHeader: "false"
       # traefik.ingress.kubernetes.io/router.entrypoints: websecure
