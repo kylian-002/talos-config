@@ -39,9 +39,10 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external
         integrations:
           traefik:
-            enabled: true
+            enabled: false
             # middlewares:
             #   - name: private-range
             #     namespace: traefik

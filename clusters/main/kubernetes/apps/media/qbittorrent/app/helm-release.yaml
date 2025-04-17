@@ -31,13 +31,14 @@ spec:
   values:
     service:
       torrent:
-        loadBalancerIP: ${TRAEFIK_IP}
+        loadBalancerIP: ${NGINX_INTERNAL_IP}
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
         integrations:
           traefik:
-            enabled: true
+            enabled: false
             middlewares:
               - name: private-range
                 namespace: traefik

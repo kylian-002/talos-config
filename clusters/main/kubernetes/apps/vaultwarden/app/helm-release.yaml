@@ -40,9 +40,10 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external
         integrations:
           traefik:
-            enabled: true
+            enabled: false
             entrypoints:
             - websecure
             # middlewares:
@@ -67,7 +68,7 @@ spec:
           main: main
         integrations:
           traefik:
-            enabled: true
+            enabled: false
             entrypoints:
             - websecure
             middlewares:

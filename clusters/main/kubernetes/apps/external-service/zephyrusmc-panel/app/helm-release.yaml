@@ -41,6 +41,7 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external
         hosts:
           - host: panel.${DOMAIN_1}
             paths:
@@ -51,7 +52,7 @@ spec:
             certificateIssuer: prod-zmc
             enabled: true
           traefik:
-            enabled: true
+            enabled: false
             entrypoints:
               - websecure
 #            middlewares:

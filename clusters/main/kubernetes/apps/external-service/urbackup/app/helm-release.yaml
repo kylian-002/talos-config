@@ -41,6 +41,7 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external        
         hosts:
           - host: backups.${DOMAIN_0}
             paths:
@@ -51,7 +52,7 @@ spec:
             certificateIssuer: prod-dl
             enabled: true
           traefik:
-            enabled: true
+            enabled: false
             entrypoints:
               - websecure
             middlewares:

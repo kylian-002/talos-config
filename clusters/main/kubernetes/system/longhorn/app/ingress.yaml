@@ -6,10 +6,12 @@ metadata:
   annotations:
       cert-manager.io/cluster-issuer: prod-dl
       cert-manager.io/private-key-rotation-policy: Always
-      traefik.frontend.passHostHeader: "false"
-      traefik.ingress.kubernetes.io/router.entrypoints: websecure
-      traefik.ingress.kubernetes.io/router.middlewares: traefik-chain-basic@kubernetescrd,traefik-private-range@kubernetescrd
-      traefik.ingress.kubernetes.io/router.tls: "true"
+      metallb.io/ip-allocated-from-pool: main
+      metallb.io/loadBalancerIPs: ${NGINX_INTERNAL_IP}      
+      # traefik.frontend.passHostHeader: "false"
+      # traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      # traefik.ingress.kubernetes.io/router.middlewares: traefik-chain-basic@kubernetescrd,traefik-private-range@kubernetescrd
+      # traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
   - host: longhorn.${DOMAIN_0}
@@ -26,7 +28,7 @@ spec:
     - hosts:
       - longhorn.${DOMAIN_0}
       secretName: longhorn-tls-0
-status:
-    loadBalancer:
-      ingress:
-      - ip: ${TRAEFIK_IP}
+# status:
+#     loadBalancer:
+#       ingress:
+#       - ip: ${TRAEFIK_IP}
