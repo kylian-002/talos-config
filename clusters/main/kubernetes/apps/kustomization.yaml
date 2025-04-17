@@ -10,7 +10,7 @@ resources:
   - nextcloud/ks.yaml
   - external-service
   - odoo/ks.yaml
-#  - grafana/ks.yaml
+  - grafana/ks.yaml
   - unpoller/ks.yaml
   - immich/ks.yaml
   - grocy/ks.yaml
