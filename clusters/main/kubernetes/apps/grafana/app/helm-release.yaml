@@ -37,31 +37,32 @@ spec:
         accessKey: "${MINIO_ACCESSKEY}"
         secretKey: "${MINIO_SECRETKEY}"
         encrKey: "${MINIO_SECRETKEY}"
-    service:
-      main:
-        type: LoadBalancer
-        loadBalancerIP: 10.16.61.143
-        ports:
-          main:
-            port: 80
-
-    # ingress:
+    # service:
     #   main:
-    #     enabled: true
-    #     integrations:
-    #       traefik:
-    #         enabled: true
-    #         middlewares:
-    #           - name: private-range
-    #             namespace: traefik
-    #       certManager:
-    #         enabled: true
-    #         certificateIssuer: prod-dl
-    #     hosts:
-    #       - host: grafana.${DOMAIN_0}
-    #         paths:
-    #           - path: /
-    #             pathType: Prefix
+    #     type: LoadBalancer
+    #     loadBalancerIP: 10.16.61.143
+    #     ports:
+    #       main:
+    #         port: 80
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        integrations:
+          traefik:
+            enabled: false
+            middlewares:
+              - name: private-range
+                namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: prod-dl
+        hosts:
+          - host: grafana.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
     persistence:
       config:
         volsync:
