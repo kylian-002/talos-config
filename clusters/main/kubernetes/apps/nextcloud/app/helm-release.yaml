@@ -43,7 +43,7 @@ spec:
         default_phone_region: NL
         # IP used for exposing nextcloud,
         # often the loadbalancer IP
-        accessIP: ${NGINX_EXTERNAL_IP}
+        accessIP: "${NGINX_EXTERNAL_IP}"
       php:
         memory_limit: 5G
         upload_limit: 20G          
