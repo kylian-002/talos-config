@@ -29,6 +29,14 @@ spec:
   uninstall:
     keepHistory: false
   values:
+  workload:
+    main:
+      podSpec:
+        containers:
+          main:
+            env:
+              # Set this to your host (example: home.mydomain.com)
+              HOMEPAGE_ALLOWED_HOSTS: "homepage.${DOMAIN_0}"
     credentials:
       s3:
         type: s3
