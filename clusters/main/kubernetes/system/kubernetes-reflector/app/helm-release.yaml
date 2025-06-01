@@ -29,7 +29,6 @@ spec:
             retries: 3
     uninstall:
         keepHistory: false
-    workload:
-      main:
-        podSpec:
-          hostUsers: true
+    values:
+        podOptions:
+            hostUsers: true        

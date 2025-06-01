@@ -108,7 +108,5 @@ spec:
           method: object_store
           credentials: s3
   
-    workload:
-      main:
-        podSpec:
-          hostUsers: true          
+    podOptions:
+      hostUsers: true          
