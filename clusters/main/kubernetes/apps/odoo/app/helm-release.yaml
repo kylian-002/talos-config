@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: odoo
-      version: 20.3.14
+      version: 20.3.15
       sourceRef:
         kind: HelmRepository
         name: truecharts
