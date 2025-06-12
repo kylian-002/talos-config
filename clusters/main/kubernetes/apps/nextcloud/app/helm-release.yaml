@@ -46,7 +46,7 @@ spec:
         accessIP: "${NGINX_EXTERNAL_IP}"
       php:
         memory_limit: 5G
-        upload_limit: 20G          
+        upload_limit: 60G          
     TZ: Europe/Amsterdam  
     credentials:
       cloudflare:
