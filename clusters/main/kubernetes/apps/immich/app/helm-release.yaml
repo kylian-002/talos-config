@@ -142,7 +142,7 @@ spec:
           - nolock
     cnpg:
       main:
-        mode: recovery
+        # mode: recovery
         backups:
           revision: "1"
           enabled: true
