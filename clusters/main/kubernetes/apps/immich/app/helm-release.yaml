@@ -142,15 +142,15 @@ spec:
           - nolock
     cnpg:
       main:
-        # # mode: recovery
-        # backups:
-        #   revision: "1"
-        #   enabled: true
-        #   credentials: minio
-        # recovery:
-        #   # revision: ""        
-        #   method: object_store
-        #   credentials: minio          
+        mode: recovery
+        backups:
+          # revision: ""
+          enabled: true
+          credentials: minio
+        recovery:
+          # revision: ""        
+          method: object_store
+          credentials: minio          
 
         # cluster:
         #   singleNode: true
