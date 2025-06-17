@@ -144,7 +144,7 @@ spec:
       main:
         mode: recovery
         backups:
-          # revision: ""
+          revision: "1"
           enabled: true
           credentials: minio
         recovery:
@@ -152,9 +152,9 @@ spec:
           method: object_store
           credentials: minio          
 
-        cluster:
-          singleNode: true
-          storage:
-            size: "120Gi"        
-          walStorage:
-            size: "120Gi"
+        # cluster:
+        #   singleNode: true
+        #   storage:
+        #     size: "120Gi"        
+        #   walStorage:
+        #     size: "120Gi"
