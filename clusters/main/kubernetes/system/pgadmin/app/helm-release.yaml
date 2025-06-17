@@ -55,7 +55,14 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                PGADMIN_DEFAULT_EMAIL: ${DOMAIN_0_EMAIL}
+                PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PWD}  
     persistence:
       config:
         volsync:
