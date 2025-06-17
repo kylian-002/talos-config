@@ -64,5 +64,5 @@ spec:
             credentials: minio
             dest:
               enabled: true
-            src:
-              enabled: true      
+            # src:
+            #   enabled: true      
