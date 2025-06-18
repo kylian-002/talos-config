@@ -41,19 +41,18 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: external
+        integrations:
+          traefik:
+            enabled: false
+            # middlewares:
+            #   - name: private-range
+            #     namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: prod-dl
         hosts:
           - host: ha.${DOMAIN_0}
             paths:
               - path: /
-                pathType: Prefix
-        integrations:
-          certManager:
-            certificateIssuer: prod-dl
-            enabled: true
-          traefik:
-            enabled: true
-            entrypoints:
-              - websecure
-#            middlewares:
-#              - name: auth
-#                namespace: traefik
+                pathType: Prefix        
