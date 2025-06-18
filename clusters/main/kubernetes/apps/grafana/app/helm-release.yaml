@@ -148,7 +148,7 @@ spec:
       #         enabled: true
     cnpg:
       main:
-        # mode: recovery
+        mode: recovery
         backups:
           # revision: "0"
           enabled: true
