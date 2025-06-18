@@ -150,7 +150,7 @@ spec:
       main:
         mode: recovery
         backups:
-          # revision: "0"
+          revision: "1"
           enabled: true
           credentials: minio
         recovery:
