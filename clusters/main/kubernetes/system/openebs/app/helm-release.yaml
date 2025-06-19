@@ -32,7 +32,9 @@ spec:
     loki:
       enabled: false
     alloy:
-      enabled: false      
+      enabled: false
+    minio:
+      enabled: false        
     engines:
       local:
         # The lvm-localpv backend contains a duplicate of snapshot controller which will cause conflicts
