@@ -6,7 +6,7 @@ metadata:
   name: system-upgrade-controller
   namespace: system-upgrade
 spec:
-  interval: 30m
+  interval: 31m
   chart:
     spec:
       chart: app-template
