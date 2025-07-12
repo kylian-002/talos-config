@@ -165,4 +165,4 @@ spec:
         enabled: false
     metrics:
       main:
-        enabled: false
+        enabled: true
