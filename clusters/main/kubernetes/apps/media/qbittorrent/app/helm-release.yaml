@@ -65,7 +65,7 @@ spec:
           - noatime
           - nodiratime
           - nolock
-      ODIS:
+      odis:
         enabled: true
         type: nfs
         path: /mnt/CHONK/backups/qnap-tsh886/Projecten/EV-Thuis-Accu/ODIS
