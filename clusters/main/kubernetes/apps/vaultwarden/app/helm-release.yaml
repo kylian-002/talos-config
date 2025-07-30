@@ -54,9 +54,6 @@ spec:
             certificateIssuer: prod-dl
         hosts:
           - host: vault.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
     vaultwarden:
       # -- Allow any user to sign-up
       # see: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-registration-of-new-users
@@ -69,12 +66,12 @@ spec:
         integrations:
           traefik:
             enabled: false
-            entrypoints:
-            - websecure
-            middlewares:
-              - name: private-range
-                namespace: traefik
-            enableFixedMiddlewares: true    
+            # entrypoints:
+            # - websecure
+            # middlewares:
+            #   - name: private-range
+            #     namespace: traefik
+            # enableFixedMiddlewares: true    
           certManager:
             enabled: true
             certificateIssuer: prod-dl
