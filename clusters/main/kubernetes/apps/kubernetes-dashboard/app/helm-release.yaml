@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: kubernetes-dashboard
-      version: 1.16.3
+      version: 2.2.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -30,12 +30,28 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    service:
+    # service:
+    #   main:
+    #     type: LoadBalancer
+    #     loadBalancerIP: ${DASHBOARD_IP}
+    #     ports:
+    #       main:
+    #         port: 80
+
+    ingress:
       main:
-        type: LoadBalancer
-        loadBalancerIP: ${DASHBOARD_IP}
-        ports:
-          main:
-            port: 80
+        enabled: true
+        ingressClassName: internal
+        integrations:
+          certManager:
+            enabled: true
+            certificateIssuer: prod-dl
+        hosts:
+          - host: dashboard.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+
+
     podOptions:
       hostUsers: true
