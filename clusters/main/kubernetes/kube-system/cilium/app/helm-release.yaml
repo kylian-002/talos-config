@@ -78,3 +78,5 @@ spec:
     operator:
       rollOutPods: true
     rollOutCiliumPods: true
+    podOptions:
+      hostUsers: true
