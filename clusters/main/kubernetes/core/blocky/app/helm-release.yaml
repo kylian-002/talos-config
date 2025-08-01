@@ -139,12 +139,12 @@ spec:
           enabled: false
           domain: dns01.clouddns.com
     # -- Set manual custom DNS resolution
-    customDNS:
-      mapping:
-        - domain: node1.zephyrus-mc.com
-          dnsserver: 10.16.60.10
-        - domain: backups.dutchlincoln.nl
-          dnsserver: 10.16.61.10
+    # customDNS:
+    #   mapping:
+    #     - domain: node1.zephyrus-mc.com
+    #       dnsserver: 10.16.60.10
+    #     - domain: backups.dutchlincoln.nl
+    #       dnsserver: 10.16.61.10
     defaultUpstreams:
       # Cloudflare
       - 1.1.1.1
