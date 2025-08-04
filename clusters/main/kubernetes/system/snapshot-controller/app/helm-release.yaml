@@ -24,6 +24,6 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  values: {}
-    # podOptions:
-    #   hostUsers: true
+  values: 
+    podOptions:
+      hostUsers: true
