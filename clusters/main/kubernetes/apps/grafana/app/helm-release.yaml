@@ -156,3 +156,5 @@ spec:
         recovery:
           method: object_store
           credentials: minio 
+    podOptions:
+      hostUsers: true
