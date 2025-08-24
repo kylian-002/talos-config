@@ -148,13 +148,11 @@ spec:
       #         enabled: true
     cnpg:
       main:
-        mode: recovery
         backups:
-          revision: "1"
           enabled: true
           credentials: minio
         recovery:
-          method: object_store
+          # method: object_store
           credentials: minio 
     podOptions:
       hostUsers: true
