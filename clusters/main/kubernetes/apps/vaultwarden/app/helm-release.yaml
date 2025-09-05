@@ -98,6 +98,8 @@ spec:
     cnpg:
       main:
         mode: recovery
+        cluster:
+          singleNode: true        
         backups:
           enabled: true
           credentials: s3
