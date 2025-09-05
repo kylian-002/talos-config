@@ -42,13 +42,13 @@ spec:
         enabled: true
         ingressClassName: external
         integrations:
-          traefik:
-            enabled: false
-            entrypoints:
-            - websecure
-            # middlewares:
-            #   - name: local
-            #     namespace: traefik
+          # traefik:
+          #   enabled: false
+          #   entrypoints:
+          #   - websecure
+          #   # middlewares:
+          #   #   - name: local
+          #   #     namespace: traefik
           certManager:
             enabled: true
             certificateIssuer: prod-dl
