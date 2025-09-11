@@ -41,6 +41,15 @@ spec:
       main:
         enabled: true
         ingressClassName: external
+        annotations:
+          # Restrict /admin path to internal IPs
+          nginx.ingress.kubernetes.io/configuration-snippet: |
+            location /admin {
+              allow 10.0.0.0/8;          
+              allow 192.168.0.0/16;
+              allow 172.16.0.0/12;      
+              deny all;
+            }    
         integrations:
           certManager:
             enabled: true
@@ -50,18 +59,6 @@ spec:
             paths:
               - path: /
                 pathType: Prefix          
-      admin: # internal for admin UI
-        enabled: true
-        ingressClassName: internal
-        certManager:
-          enabled: true
-          certificateIssuer: prod-dl
-        hosts:
-          - host: vault.${DOMAIN_0}
-            paths:
-              - path: /admin
-                pathType: Prefix
-
     vaultwarden:
       # -- Allow any user to sign-up
       # see: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-registration-of-new-users
