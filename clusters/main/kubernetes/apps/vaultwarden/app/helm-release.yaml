@@ -105,6 +105,7 @@ spec:
           credentials: s3
         recovery:
           method: object_store
+          revision: "1"
           credentials: s3
   
     podOptions:

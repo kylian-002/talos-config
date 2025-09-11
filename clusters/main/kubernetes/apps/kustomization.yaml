@@ -4,11 +4,11 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - media
   - flaresolverr/ks.yaml
-  - vaultwarden/ks.yaml
+#  - vaultwarden/ks.yaml
   - homepage/ks.yaml
   - nextcloud/ks.yaml
   - external-service
-#  - grafana/ks.yaml
+  - grafana/ks.yaml
   - unpoller/ks.yaml
   - immich/ks.yaml
   - grocy/ks.yaml
