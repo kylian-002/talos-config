@@ -42,36 +42,6 @@ spec:
         enabled: true
         ingressClassName: external
         integrations:
-          # traefik:
-          #   enabled: false
-          #   entrypoints:
-          #   - websecure
-          #   # middlewares:
-          #   #   - name: local
-          #   #     namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: prod-dl
-        hosts:
-          - host: vault.${DOMAIN_0}
-    vaultwarden:
-      # -- Allow any user to sign-up
-      # see: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-registration-of-new-users
-      allowSignups: false
-      admin:
-        enabled: true
-        primary: false
-        targetSelector:
-          main: main
-        integrations:
-          traefik:
-            enabled: false
-            # entrypoints:
-            # - websecure
-            # middlewares:
-            #   - name: private-range
-            #     namespace: traefik
-            # enableFixedMiddlewares: true    
           certManager:
             enabled: true
             certificateIssuer: prod-dl
@@ -79,12 +49,29 @@ spec:
           - host: vault.${DOMAIN_0}
             paths:
               - path: /
-                pathType: Prefix                 
+                pathType: Prefix          
+      admin: # internal for admin UI
+        enabled: true
+        ingressClassName: internal
+        certManager:
+          enabled: true
+          certificateIssuer: prod-dl
+        hosts:
+          - host: vault.${DOMAIN_0}
+            paths:
+              - path: /admin
+                pathType: Prefix
 
+    vaultwarden:
+      # -- Allow any user to sign-up
+      # see: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-registration-of-new-users
+      allowSignups: false
+      admin:
+        enabled: true
         # Disabling the admin token will make the admin portal accessible to anyone, use carefully: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-admin-token
         disableAdminToken: false
         ## Token for admin login, will be generated if not defined. https://github.com/dani-garcia/bitwarden_rs/wiki/Enabling-admin-page
-#        token: "${VW_TOKEN}"
+        token: "${VW_TOKEN}"
     persistence:
       data:
         volsync:
@@ -97,7 +84,7 @@ spec:
               enabled: true
     cnpg:
       main:
-        mode: recovery
+        # mode: recovery
         cluster:
           singleNode: true        
         backups:
@@ -105,7 +92,6 @@ spec:
           credentials: s3
         recovery:
           method: object_store
-          revision: "1"
           credentials: s3
   
     podOptions:
