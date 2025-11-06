@@ -159,6 +159,6 @@ spec:
         #     size: "120Gi"        
         #   walStorage:
         #     size: "120Gi"
-    # workload:
-    #   main:
-    #     replicas: 0
+    workload:
+      main:
+        replicas: 1
