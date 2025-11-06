@@ -142,6 +142,7 @@ spec:
           - nolock
     cnpg:
       main:
+        type: vectorchord
         mode: recovery
         backups:
           # revision: "x"
