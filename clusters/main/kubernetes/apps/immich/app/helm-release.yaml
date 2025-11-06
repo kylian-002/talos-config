@@ -149,7 +149,7 @@ spec:
           enabled: enable
           credentials: minio
         recovery:
-          revision: "1"        
+          revision: "0"        
           method: object_store
           credentials: minio          
 
