@@ -145,11 +145,11 @@ spec:
         # type: vectorchord
         mode: recovery
         backups:
-          revision: "4"
+          # revision: "4"
           enabled: enable
           credentials: minio
         recovery:
-          revision: "0"        
+          # revision: "0"        
           method: object_store
           credentials: minio          
 
