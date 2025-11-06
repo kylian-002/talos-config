@@ -152,7 +152,6 @@ spec:
           # revision: "0"        
           method: object_store
           credentials: minio          
-
         # cluster:
         #   singleNode: true
         #   storage:
