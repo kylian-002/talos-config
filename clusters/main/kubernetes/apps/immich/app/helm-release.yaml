@@ -145,11 +145,11 @@ spec:
         # type: vectorchord
         mode: recovery
         backups:
-          revision: "1"
+          revision: "2"
           enabled: enable
           credentials: minio
         recovery:
-          revision: "0"        
+          revision: "1"        
           method: object_store
           credentials: minio          
 
@@ -159,6 +159,6 @@ spec:
         #     size: "120Gi"        
         #   walStorage:
         #     size: "120Gi"
-    workload:
-      main:
-        replicas: 0
+    # workload:
+    #   main:
+    #     replicas: 0
