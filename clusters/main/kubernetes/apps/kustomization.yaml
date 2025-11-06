@@ -11,4 +11,4 @@ resources:
   - grafana/ks.yaml
   - unpoller/ks.yaml
   - immich/ks.yaml
-  - grocy/ks.yamls
+#  - grocy/ks.yamls
