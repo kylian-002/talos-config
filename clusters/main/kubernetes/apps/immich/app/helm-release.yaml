@@ -145,8 +145,8 @@ spec:
         # type: vectorchord
         mode: recovery
         backups:
-          # revision: "4"
-          enabled: enable
+          revision: "5"
+          enabled: false
           credentials: minio
         recovery:
           # revision: "0"        
