@@ -145,7 +145,7 @@ spec:
         mode: recovery
         backups:
           # revision: "x"
-          enabled: true
+          enabled: disable
           credentials: minio
         recovery:
           # revision: "x"        
