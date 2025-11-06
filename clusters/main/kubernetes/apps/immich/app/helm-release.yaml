@@ -142,14 +142,14 @@ spec:
           - nolock
     cnpg:
       main:
-        type: vectorchord
+        # type: vectorchord
         mode: recovery
         backups:
-          # revision: "x"
+          revision: "1"
           enabled: disable
           credentials: minio
         recovery:
-          # revision: "x"        
+          revision: "0"        
           method: object_store
           credentials: minio          
 
