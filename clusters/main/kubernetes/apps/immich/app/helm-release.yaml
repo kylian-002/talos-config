@@ -143,7 +143,7 @@ spec:
     cnpg:
       main:
         # type: vectorchord
-        mode: recovery
+        # mode: recovery
         backups:
           # revision: "5"
           enabled: true
