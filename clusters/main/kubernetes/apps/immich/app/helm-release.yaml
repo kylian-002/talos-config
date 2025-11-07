@@ -52,14 +52,14 @@ spec:
         hosts:
           - host: immich.${DOMAIN_0}
 
-    # service:
-    #   main:
-    #     enabled: true
-    #     type: LoadBalancer
-    #     loadBalancerIP: 10.16.61.48
-    #     integrations:
-    #       metallb:
-    #         enabled: true
+    service:
+      main:
+        enabled: true
+        type: LoadBalancer
+        loadBalancerIP: 10.16.61.48
+        integrations:
+          metallb:
+            enabled: true
 
     persistence:
       library:
