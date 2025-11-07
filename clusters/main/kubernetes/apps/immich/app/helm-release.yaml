@@ -57,11 +57,9 @@ spec:
         enabled: true
         type: LoadBalancer
         loadBalancerIP: 10.16.61.48
-        ports:
-          http:
+        integrations:
+          metallb:
             enabled: true
-            port: 80
-            targetPort: 2283
 
     persistence:
       library:
