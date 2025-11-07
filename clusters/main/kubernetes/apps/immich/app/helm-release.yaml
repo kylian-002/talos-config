@@ -57,12 +57,11 @@ spec:
         enabled: true
         type: LoadBalancer
         loadBalancerIP: 10.16.61.48
-        loadBalancerSourceRanges:
-          - 10.16.61.0/24
         ports:
           http:
             enabled: true
             port: 80
+            targetPort: 2283
 
     persistence:
       library:
