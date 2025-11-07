@@ -54,17 +54,12 @@ spec:
 
     service:
       main:
-        enabled: true
+        externalTrafficPolicy: Local
         type: LoadBalancer
-        loadBalancerIP: 10.16.61.148
+        loadBalancerIP: "10.16.61.148"
         integrations:
           metallb:
-            enabled: true
-        ports:
-          main:
-            port: 10323
-            protocol: http
-            targetSelector: main            
+            enabled: true                
 
     persistence:
       library:
