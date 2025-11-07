@@ -39,7 +39,7 @@ spec:
         encrKey: "${MINIO_SECRETKEY}"
     ingress:
       main:
-        enabled: true
+        enabled: false
         ingressClassName: external
         annotations:
           nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
