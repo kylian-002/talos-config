@@ -43,7 +43,7 @@ spec:
         ingressClassName: external
         integrations:
           certManager:
-            enabled: true
+            enabled: false
             certificateIssuer: prod-dl
         hosts:
           - host: immich.${DOMAIN_0}
