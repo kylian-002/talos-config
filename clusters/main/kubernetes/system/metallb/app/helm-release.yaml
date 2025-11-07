@@ -24,9 +24,9 @@ spec:
   values:
     speaker:
       ignoreExcludeLB: true
-    configInline:
-      addressPools:
-        - name: immich-pool
-          protocol: layer2
-          addresses:
-            - 10.16.61.46-10.16.61.50
+    # configInline:
+    #   addressPools:
+    #     - name: immich-pool
+    #       protocol: layer2
+    #       addresses:
+    #         - 10.16.61.46-10.16.61.50
