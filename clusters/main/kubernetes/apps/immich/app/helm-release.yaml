@@ -52,10 +52,17 @@ spec:
         hosts:
           - host: immich.${DOMAIN_0}
 
-    # service:
-    #   main:
-    #   machinelearning:
-    #     enabled: false
+    service:
+      main:
+        enabled: true
+        type: LoadBalancer
+        loadBalancerIP: 10.16.61.48
+        loadBalancerSourceRanges:
+          - 10.16.61.0/24
+        ports:
+          http:
+            enabled: true
+            port: 80
 
     persistence:
       library:
