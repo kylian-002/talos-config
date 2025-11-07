@@ -56,10 +56,15 @@ spec:
       main:
         enabled: true
         type: LoadBalancer
-        loadBalancerIP: 10.16.61.48
+        loadBalancerIP: 10.16.61.148
         integrations:
           metallb:
             enabled: true
+        ports:
+          main:
+            port: 10323
+            protocol: http
+            targetSelector: main            
 
     persistence:
       library:

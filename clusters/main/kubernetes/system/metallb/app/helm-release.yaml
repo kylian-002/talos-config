@@ -24,9 +24,19 @@ spec:
   values:
     speaker:
       ignoreExcludeLB: true
-    # configInline:
-    #   addressPools:
-    #     - name: immich-pool
-    #       protocol: layer2
-    #       addresses:
-    #         - 10.16.61.46-10.16.61.50
+    ipAddressPools:
+      # Enter a general name for this IP range. Something like _main_ for this field is fine.
+      - name: main
+        # If you want MetalLB Services to auto-assign IPs from the configured address pool without needing to specify per chart.
+        autoAssign: false
+        avoidBuggyIPs: true
+        # Specify an IP range for MetalLB to assign IPs that is **OUTSIDE** your current DHCP range on your LAN. For example, if your DHCP range is `192.168.1.100-192.168.1.255`, then your entry can be any range below `192.168.1.100`. This entry can also be specified in CIDR format.
+        # For users with VLANs or multiple subnets, you may create create additional address pool objects as needed.
+        addresses:
+          - 10.16.61.100-10.16.61.199
+    L2Advertisements:
+      # Enter a basic name for your layer 2 advertisement.
+      - name: main
+        # Use the same name as defined above.
+        addressPools:
+          - main
