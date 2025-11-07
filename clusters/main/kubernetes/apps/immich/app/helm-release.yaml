@@ -42,19 +42,11 @@ spec:
         enabled: true
         ingressClassName: external
         integrations:
-          traefik:
-            enabled: false
-            # middlewares:
-            #   - name: private-range
-            #     namespace: traefik
           certManager:
             enabled: true
             certificateIssuer: prod-dl
         hosts:
           - host: immich.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
 
     # service:
     #   main:
