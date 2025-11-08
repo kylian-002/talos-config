@@ -55,3 +55,11 @@ spec:
 
     podOptions:
       hostUsers: true
+    service:
+      main:
+        externalTrafficPolicy: Local
+        type: LoadBalancer
+        loadBalancerIP: 10.16.61.150
+        integrations:
+          metallb:
+            enabled: true  
