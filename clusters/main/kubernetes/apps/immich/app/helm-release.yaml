@@ -47,7 +47,7 @@ spec:
           nginx.ingress.kubernetes.io/proxy-body-size: "10G"        
         integrations:
           certManager:
-            enabled: false
+            enabled: enable
             certificateIssuer: prod-dl
         hosts:
           - host: immich.${DOMAIN_0}
