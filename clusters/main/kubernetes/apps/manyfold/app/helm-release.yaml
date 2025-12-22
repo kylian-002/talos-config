@@ -51,7 +51,7 @@ spec:
     persistence:
       libraries:
         enabled: true
-        path: /mnt/TANK/manyfold
+        path: /mnt/TANK/3dprinting/manyfold
         server: 10.16.61.10
         type: nfs
         mountOptions:
