@@ -79,4 +79,4 @@ spec:
           containers:
             main:
               env:
-                MULTI_USER: "true"
+                MULTIUSER: "enabled"
