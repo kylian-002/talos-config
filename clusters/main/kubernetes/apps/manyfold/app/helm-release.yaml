@@ -72,4 +72,12 @@ spec:
         recovery:     
           method: object_store
           credentials: minio          
-        
+
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                - name: MULTI_USER
+                  value: "true"        
