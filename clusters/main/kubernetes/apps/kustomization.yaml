@@ -12,3 +12,4 @@ resources:
   - unpoller/ks.yaml
   - immich/ks.yaml
 #  - grocy/ks.yamls
+  - manyfold/ks.yaml
