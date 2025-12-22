@@ -75,5 +75,8 @@ spec:
 
     workload:
       main:
-        extraEnv:
-          MULTI_USER: "true" 
+        podSpec:
+          containers:
+            main:
+              env:
+                MULTI_USER: "true"
