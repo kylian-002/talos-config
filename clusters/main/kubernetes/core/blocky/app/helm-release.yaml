@@ -53,7 +53,7 @@ spec:
           groups:
             - firebog-ads
             - firebog-tracking
-            - whitelist
+            # - whitelist
       whitelist:
       - name: whitelist
         lists:
