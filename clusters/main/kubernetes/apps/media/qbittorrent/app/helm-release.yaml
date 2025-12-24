@@ -65,17 +65,17 @@ spec:
           - noatime
           - nodiratime
           - nolock
-      odis:
-        enabled: true
-        type: nfs
-        path: /mnt/CHONK/backups/qnap-tsh886/Projecten/EV-Thuis-Accu/ODIS
-        server: 10.16.61.10
-        mountPath: "/ODIS"
-        mountOptions:
-          - nfsvers=4
-          - tcp
-          - intr
-          - hard
-          - noatime
-          - nodiratime
-          - nolock               
+      # odis:
+      #   enabled: true
+      #   type: nfs
+      #   path: /mnt/CHONK/backups/qnap-tsh886/Projecten/EV-Thuis-Accu/ODIS
+      #   server: 10.16.61.10
+      #   mountPath: "/ODIS"
+      #   mountOptions:
+      #     - nfsvers=4
+      #     - tcp
+      #     - intr
+      #     - hard
+      #     - noatime
+      #     - nodiratime
+      #     - nolock               
