@@ -29,7 +29,14 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
+    credentials:
+      minio:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-jellyfin"
+        accessKey: "${MINIO_ACCESSKEY}"
+        secretKey: "${MINIO_SECRETKEY}"
+        encrKey: "${MINIO_SECRETKEY}"
     ingress:
       main:
         enabled: true
@@ -57,6 +64,28 @@ spec:
                 pathType: Prefix
 
     persistence:
+      config:
+        volsync:
+        - name: config
+          type: restic
+          credentials: minio
+          dest:
+            enabled: true
+          src:
+            enabled: true
+            # trigger:
+            #   schedule: 30 0 * * *
+      data:
+        volsync:
+        - name: data
+          type: restic
+          credentials: minio
+          dest:
+            enabled: true
+          src:
+            enabled: true
+            # trigger:
+            #   schedule: 30 0 * * *    
       media:
         enabled: true
         type: nfs
