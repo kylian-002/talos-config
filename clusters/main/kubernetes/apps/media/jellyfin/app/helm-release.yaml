@@ -42,11 +42,6 @@ spec:
         enabled: true
         ingressClassName: external
         integrations:
-          traefik:
-            enabled: false
-            # middlewares:
-            #   - name: local
-            #     namespace: traefik
           certManager:
             enabled: true
             certificateIssuer: prod-dl
@@ -59,10 +54,6 @@ spec:
                 key: ${JELLYFIN_API}       
         hosts:
           - host: jellyfin.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
-
     persistence:
       config:
         volsync:
