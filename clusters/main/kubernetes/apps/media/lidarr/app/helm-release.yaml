@@ -37,6 +37,12 @@ spec:
         accessKey: "${MINIO_ACCESSKEY}"
         secretKey: "${MINIO_SECRETKEY}"
         encrKey: "${MINIO_SECRETKEY}"
+      rustfs:
+        type: s3
+        url: "${RUSTFS_URL}"
+        bucket: "${S3PREFIX}-lidarr"
+        accessKey: "${RUSTFS_ACCESSKEY}"
+        secretKey: "${RUSTFS_SECRETKEY}"
     workload:
       exportarr:
         enabled: false
