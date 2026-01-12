@@ -1,12 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
-    "name": "TrueCharts",
-    "image": "tccr.io/tccr/devcontainer:v1.0.0-RC24@sha256:46107e5a359244ea5c1fe4d818ed61941826ed00049fbeb175b9a3cab6fe8984",
-    "initializeCommand": "docker pull tccr.io/tccr/devcontainer:v1.0.0-RC24",
+    "name": "ClusterTool Cluster",
+    "image": "oci.trueforge.org/tccr/devcontainer:v2.0.0@sha256:d8a12070a88e36cf1eb5b14fbeb1d5c866a1e5f8b52cc9e5989fb7f53c154b2b",
     "postCreateCommand": {
       "setup": "bash ${containerWorkspaceFolder}/.devcontainer/postCreateCommand.sh"
     },
     "postStartCommand": {
       "git": "git config --global --add safe.directory ${containerWorkspaceFolder}"
-    }
+    },
+    "postAttachCommand": "fish",
+    "updateRemoteUserUID": false,
+    "runArgs": ["--privileged"]
   }
