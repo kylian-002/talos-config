@@ -73,6 +73,7 @@ spec:
         - name: data
           type: restic
           credentials: minio
+          cacheCapacity: 25Gi
           dest:
             enabled: true
           src:
