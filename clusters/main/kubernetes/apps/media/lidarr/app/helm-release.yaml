@@ -104,3 +104,5 @@ spec:
               cacheCapacity: 25Gi
               # cleanupTempPVC: true
               # cleanupCachePVC: true
+              trigger:
+                schedule: 30 0 * * *

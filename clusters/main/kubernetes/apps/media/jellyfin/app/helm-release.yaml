@@ -78,8 +78,8 @@ spec:
             enabled: true
           src:
             enabled: true
-            # trigger:
-            #   schedule: 30 0 * * *    
+            trigger:
+              schedule: 30 0 * * * 
       media:
         enabled: true
         type: nfs
