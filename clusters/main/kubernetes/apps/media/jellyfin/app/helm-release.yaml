@@ -65,8 +65,8 @@ spec:
             enabled: true
           src:
             enabled: true
-            # trigger:
-            #   schedule: 30 0 * * *
+            trigger:
+              schedule: 45 0 * * *
               
       data:
         volsync:

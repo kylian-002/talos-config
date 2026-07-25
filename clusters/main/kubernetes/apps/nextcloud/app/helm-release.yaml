@@ -94,6 +94,8 @@ spec:
               enabled: true
             src:
               enabled: true
+              trigger:
+                schedule: 45 1 * * *              
       config:
         volsync:
           - name: config
