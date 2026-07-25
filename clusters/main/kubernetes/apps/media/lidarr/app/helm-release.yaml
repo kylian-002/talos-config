@@ -105,4 +105,4 @@ spec:
               # cleanupTempPVC: true
               # cleanupCachePVC: true
               trigger:
-                schedule: 30 0 * * *
+                schedule: 0 1 * * *

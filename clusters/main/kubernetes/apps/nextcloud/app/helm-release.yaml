@@ -106,7 +106,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 10 1 * * *
+                schedule: 45 1 * * *
 
       data:
         enabled: true

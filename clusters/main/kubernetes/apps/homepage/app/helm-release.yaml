@@ -75,7 +75,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 10 0 * * *
+                schedule: 15 0 * * *
 
     addons:
       codeserver:
