@@ -53,12 +53,12 @@ spec:
           groups:
             - firebog-ads
             - firebog-tracking
-            - whitelist
+            # - whitelist
       whitelist:
       - name: whitelist
         lists:
           - https://raw.githubusercontent.com/kylian-002/Block-and-Whitelist/refs/heads/main/whitelist.txt
-        # []          
+          # []          
         # - https://raw.githubusercontent.com/kylian-002/Block-and-Whitelist/refs/heads/main/whitelist.txt
         # - https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt
         # - https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
