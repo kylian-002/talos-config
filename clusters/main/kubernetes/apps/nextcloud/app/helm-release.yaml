@@ -135,4 +135,15 @@ spec:
           method: object_store
           credentials: minio
     podOptions:
-      hostUsers: true              
+      hostUsers: true             
+
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              resources:
+                requests:
+                  memory: 2Gi
+                limits:
+                  memory: 6Gi
