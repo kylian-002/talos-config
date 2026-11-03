@@ -15,5 +15,6 @@ resources:
   - cilium.yaml
   - metallb.yaml
   - ingress-nginx.yaml
-  - node-feature-discovery.yaml  
+  - node-feature-discovery.yaml
+  - openebs.yaml  
 # more goes here!
