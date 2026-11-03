@@ -12,5 +12,8 @@ resources:
   - prometheus-community.yaml
   - spegel.yaml
   - truecharts.yaml
-  - metallb.yaml  
+  - cilium.yaml
+  - metallb.yaml
+  - ingress-nginx.yaml
+  - node-feature-discovery.yaml  
 # more goes here!
