@@ -55,13 +55,14 @@ spec:
         server: 10.16.61.10
         type: nfs
         mountOptions:
-          - nfsvers=4
-          - tcp
-          - intr
-          - hard
-          - noatime
-          - nodiratime
-          - nolock
+          - key: nfsvers
+            value: "4"
+          - key: tcp
+          - key: intr
+          - key: hard
+          - key: noatime
+          - key: nodiratime
+          - key: nolock
 
     cnpg:
       main:

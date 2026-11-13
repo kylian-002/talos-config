@@ -81,13 +81,14 @@ spec:
         path: /mnt/CHONK/media/jellyfin
         server: 10.16.61.10
         mountOptions:
-          - nfsvers=4
-          - tcp
-          - intr
-          - hard
-          - noatime
-          - nodiratime
-          - nolock
+          - key: nfsvers
+            value: "4"
+          - key: tcp
+          - key: intr
+          - key: hard
+          - key: noatime
+          - key: nodiratime
+          - key: nolock
       config:
         enabled: true      
         volsync:

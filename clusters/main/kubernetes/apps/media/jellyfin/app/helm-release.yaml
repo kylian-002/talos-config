@@ -60,7 +60,7 @@ spec:
         - name: config
           type: restic
           credentials: minio
-          cacheCapacity: 25Gi
+          # cacheCapacity: 25Gi
           dest:
             enabled: true
           src:
@@ -73,7 +73,7 @@ spec:
         - name: data
           type: restic
           credentials: minio
-          cacheCapacity: 25Gi
+          # cacheCapacity: 25Gi
           dest:
             enabled: true
           src:
@@ -87,10 +87,11 @@ spec:
         server: 10.16.61.10
         mountPath: "/media"
         mountOptions:
-          - nfsvers=4
-          - tcp
-          - intr
-          - hard
-          - noatime
-          - nodiratime
-          - nolock        
+          - key: nfsvers
+            value: "4"
+          - key: tcp
+          - key: intr
+          - key: hard
+          - key: noatime
+          - key: nodiratime
+          - key: nolock     

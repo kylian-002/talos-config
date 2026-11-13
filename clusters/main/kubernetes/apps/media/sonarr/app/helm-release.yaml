@@ -55,8 +55,8 @@ spec:
             enabled: true
             name: "sonarr"
             href: http://sonarr.media.svc.cluster.local:8989
-            custom:
-              key: ${SONARR_API}
+            # custom:
+            #   key: ${SONARR_API}
         hosts:
           - host: sonarr.${DOMAIN_0}
             paths:
@@ -70,10 +70,11 @@ spec:
         path: /mnt/CHONK/media/jellyfin
         server: 10.16.61.10
         mountOptions:
-          - nfsvers=4
-          - tcp
-          - intr
-          - hard
-          - noatime
-          - nodiratime
-          - nolock     
+          - key: nfsvers
+            value: "4"
+          - key: tcp
+          - key: intr
+          - key: hard
+          - key: noatime
+          - key: nodiratime
+          - key: nolock    
