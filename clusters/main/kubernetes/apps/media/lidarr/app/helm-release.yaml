@@ -102,7 +102,7 @@ spec:
               # cleanupCachePVC: true
             src:
               enabled: true
-              cacheCapacity: 25Gi
+              cacheCapacity: 30Gi
               # cleanupTempPVC: true
               # cleanupCachePVC: true
               trigger:
