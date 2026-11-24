@@ -9,6 +9,4 @@ resources:
   - nextcloud/ks.yaml
   - external-service
   - grafana/ks.yaml
-  - unpoller/ks.yaml
   - immich/ks.yaml
-  - manyfold/ks.yaml
