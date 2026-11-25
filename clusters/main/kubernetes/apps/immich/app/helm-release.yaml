@@ -154,7 +154,7 @@ spec:
         enabled: true
         mode: operator
         operator:
-          pgVersion: 16
+          # pgVersion: 16
           mode: recovery
           recovery:
             method: object_store
