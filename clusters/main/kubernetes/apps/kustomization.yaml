@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - kubernetes-dashboard/ks.yaml
   - media
-  - flaresolverr/ks.yaml
   - vaultwarden/ks.yaml
   - homepage/ks.yaml
   - nextcloud/ks.yaml
