@@ -59,12 +59,13 @@ spec:
         volsync:
         - name: config
           type: restic
-          credentials: minio
-          cacheCapacity: 25Gi
+          credentials: minio          
           dest:
+            cacheCapacity: 25Gi
             enabled: true
           src:
             enabled: true
+            cacheCapacity: 25Gi
             trigger:
               schedule: 45 0 * * *
               
@@ -73,11 +74,12 @@ spec:
         - name: data
           type: restic
           credentials: minio
-          cacheCapacity: 25Gi
           dest:
+            cacheCapacity: 25Gi
             enabled: true
           src:
             enabled: true
+            cacheCapacity: 25Gi
             trigger:
               schedule: 45 0 * * * 
       media:
